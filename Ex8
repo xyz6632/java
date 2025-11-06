@@ -1,0 +1,145 @@
+package com;
+
+import java.util.Scanner;
+
+// Interface for engineers
+
+interface engg {
+
+}
+
+int id e 1;
+
+// Constant for engineer ID
+
+void show_e(); /
+
+/ Method to show engineer details
+
+// Interface for doctors
+
+interface doc {
+
+}
+
+int id d2;
+
+// Constant for doctor 10
+
+void show_d(); // Method to show doctor details
+
+// Class that implements both engg and doc interfaces
+
+public class P_8 implements engg, doc {
+
+Scanner sc = new Scanner(System.in);
+
+String name_d; // Doctor's name
+
+int age_d;
+
+// Doctor's age
+
+String speci_d;
+
+// Doctor's specialization
+
+String name e; int age_e;
+
+// Engineer's name
+
+String specie; /
+
+// Engineer's age
+
+/ Engineer's specialization
+
+// Methad to read doctor's details
+
+public void read_d() {
+
+}
+
+System.out.println("Enter the name of the doctor: ");
+
+name_d sc.next();
+
+System.out.println("Enter the age of the doctor: ");
+
+age_d sc.nextInt();
+
+System.out.println("Enter the specialization of the doctor: ");
+
+speci_dsc.next();
+
+// Method to read engineer's details
+
+public void read_e() {
+
+public void read_e() {
+
+System.out.println("Enter the name of the engineer: ");
+
+name_e = sc.next();
+
+System.out.println("Enter the age of the engineer: ");
+
+age_e = sc.nextInt();
+
+System.out.println("Enter the specialization of the engineer: ");
+
+speci_e = sc.next();
+
+}
+
+// Method to display doctor's details
+
+public void show_d() {
+
+System.out.println("The name of the doctor is: + name_d);
+
+System.out.println("The age of the doctor is: + age_d);
+
+System.out.println("The ID of the doctor is: + id_d);
+
+System.out.println("The specialization of the doctor is: + speci_d);
+
+}
+
+// Method to display engineer's details
+
+public void show_e() {
+
+System.out.println("The name of the engineer is: + name_e);
+
+System.out.println("The age of the engineer is: + age_e);
+
+System.out.println("The ID of the engineer is: + id_e);
+
+System.out.println("The specialization of the engineer is: + speci_e);
+
+}
+
+// Main method to run the program
+
+public static void main(String[] args) {
+
+P_8 db = new P_8();
+
+// Reading and displaying doctor's details
+
+db.read_d();
+
+System.out.println("The following are the data of the doctor: ");
+
+db.show_d(); |
+
+// Reading and displaying engineer's details
+
+db.read_e();
+
+System.out.println("The following are the data of the engineer: ");
+
+db.show_e();
+
+}}
