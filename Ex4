@@ -1,0 +1,211 @@
+EXPERIMENT NO : 4
+Title : Methods and constructor overloading 
+
+Code :1
+import java.util.Scanner;
+
+class Calculator {
+    
+    // Method 1: Add two integers
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method 2: Add three integers
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method 3: Add two doubles
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class MethodOverloadingExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Calculator calc = new Calculator();
+
+        System.out.println("Choose operation:");
+        System.out.println("1. Add two integers");
+        System.out.println("2. Add three integers");
+        System.out.println("3. Add two doubles");
+        System.out.print("Enter choice: ");
+        int choice = sc.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.print("Enter first integer: ");
+                int x1 = sc.nextInt();
+                System.out.print("Enter second integer: ");
+                int y1 = sc.nextInt();
+                System.out.println("Sum = " + calc.add(x1, y1));
+                break;
+
+            case 2:
+                System.out.print("Enter first integer: ");
+                int x2 = sc.nextInt();
+                System.out.print("Enter second integer: ");
+                int y2 = sc.nextInt();
+                System.out.print("Enter third integer: ");
+                int z2 = sc.nextInt();
+                System.out.println("Sum = " + calc.add(x2, y2, z2));
+                break;
+
+            case 3:
+                System.out.print("Enter first double: ");
+                double d1 = sc.nextDouble();
+                System.out.print("Enter second double: ");
+                double d2 = sc.nextDouble();
+                System.out.println("Sum = " + calc.add(d1, d2));
+                break;
+
+            default:
+                System.out.println("Invalid choice!");
+        }
+
+        sc.close();
+    }
+}
+
+OUTPUT
+Choose operation:
+1. Add two integers
+2. Add three integers
+3. Add two doubles
+Enter choice: 1
+Enter first integer: 12
+Enter second integer: 45
+Sum = 57
+
+Choose operation:
+1. Add two integers
+2. Add three integers
+3. Add two doubles
+Enter choice: 2
+Enter first integer: 12
+Enter second integer: 45
+Enter third integer: 67
+Sum = 124
+
+Choose operation:
+1. Add two integers
+2. Add three integers
+3. Add two doubles
+Enter choice: 3
+Enter first double: 12.0
+Enter second double: 34.6
+Sum = 46.6
+
+
+Time Complexity: O(1), since each addition operation (two integers, three integers, or two doubles) takes constant time.
+Space Complexity: O(1), only a fixed amount of variables are used regardless of input size.
+Worst Case Scenario: Still O(1), because even in the largest case (adding three integers), the program performs only a few constant-time operations.
+
+
+CODE 2: CONSTRUCTOR OVERLOADING
+                 import java.util.Scanner;
+	    public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+
+	        System.out.println("Choose constructor:");
+	        System.out.println("1. Default");
+	        System.out.println("2. Name only");
+	        System.out.println("3. Name + Age");
+	        System.out.println("4. Name + Age + Course");
+	        System.out.print("Enter choice: ");
+	        int choice = sc.nextInt();
+	        sc.nextLine(); // consume newline
+
+	        Student s;
+
+	        switch (choice) {
+	            case 1:
+	                s = new Student();   // default constructor
+	                break;
+	            case 2:
+	                System.out.print("Enter name: ");
+	                String n1 = sc.nextLine();
+	                s = new Student(n1);  // one-arg constructor
+	                break;
+	            case 3:
+	                System.out.print("Enter name: ");
+	                String n2 = sc.nextLine();
+	                System.out.print("Enter age: ");
+	                int a2 = sc.nextInt();
+	                s = new Student(n2, a2);  // two-arg constructor
+	                break;
+	            case 4:
+	                System.out.print("Enter name: ");
+	                String n3 = sc.nextLine();
+	                System.out.print("Enter age: ");
+	                int a3 = sc.nextInt();
+	                sc.nextLine(); // consume newline
+	                System.out.print("Enter course: ");
+	                String c3 = sc.nextLine();
+	                s = new Student(n3, a3, c3);  // three-arg constructor
+	                break;
+	            default:
+	                System.out.println("Invalid choice, using default constructor.");
+	                s = new Student();
+	        }
+
+	        System.out.println("\nStudent details:");
+	        s.display();
+
+	        sc.close();
+	    }
+	}
+
+OUTPUT
+Choose constructor:
+1. Default
+2. Name only
+3. Name + Age
+4. Name + Age + Course
+Enter choice: 1
+
+Student details:
+Name: Unknown, Age: 0, Course: Not Assigned
+
+Choose constructor:
+1. Default
+2. Name only
+3. Name + Age
+4. Name + Age + Course
+Enter choice: 2
+Enter name: sam
+
+Student details:
+Name: sam, Age: 0, Course: Not Assigned
+
+Choose constructor:
+1. Default
+2. Name only
+3. Name + Age
+4. Name + Age + Course
+Enter choice: 3
+Enter name: Sam
+Enter age: 20
+
+Student details:
+Name: Sam, Age: 20, Course: Not Assigned
+
+
+Choose constructor:
+1. Default
+2. Name only
+3. Name + Age
+4. Name + Age + Course
+Enter choice: 4
+Enter name: Sam
+Enter age: 20
+Enter course: fjp
+
+Student details:
+Name: Sam, Age: 20, Course: fjp
+
+  Time Complexity: O(1), since constructor calls and field assignments are constant-time operations.
+  Space Complexity: O(1), only one Student object is created at a time with a few variables.
+  Worst Case Scenario: Still O(1), even in the most complex constructor (name + age + course), the program only handles a few constant-time assignments and string storage.
