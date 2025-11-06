@@ -1,0 +1,101 @@
+EXPERIMENT NO : 1
+TITLE:Simple Java Programs
+
+Code: 1. To find the factorial of a number 
+package Factorial;
+import java.util.Scanner;
+public class FactorialCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = sc.nextInt();
+        int factorial = 1;   
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        System.out.println("Factorial of " + number + " is: " + factorial);
+    }
+}
+
+ Output :
+Enter a number: 9
+Factorial of 9 is: 362880
+
+ Time Complexity: O(n)
+ Space Complexity: O(1)
+ Worst Case Scenario: When input n is very large → requires n multiplications (linear growth).
+
+Code:2.Display first 51 prime numbers
+package Factorial;
+public class First51primenumbers {
+    public static void main(String[] args) {
+        int count = 0;      
+        int number = 2;     
+        System.out.println("First 51 prime numbers:");
+        while (count < 51) {
+            if (isPrime(number)) {
+                System.out.print(number + " ");
+                count++; }
+            number++;
+        }
+    }
+    public static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+}
+
+Output :
+First 51 prime numbers:
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193 197 199 211 223 227 229 233
+
+
+  Time Complexity: O(k · √m) → effectively O(√m) since k = 51 is constant
+  Space Complexity: O(1)
+  Worst Case Scenario: For larger numbers close to the 51st prime (~233), the loop runs up to √n times (about 15 iterations per check)
+
+
+Code:3. To find sum & average of n numbers
+package Factorial;
+import java.util.Scanner;
+public class Sumandaverages {
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter how many numbers: ");
+        int n = scanner.nextInt();
+
+        int sum = 0;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Enter number " + i + ": ");
+            int num = scanner.nextInt();
+            sum += num;
+        }
+
+        double average = (double) sum / n;
+
+        System.out.println("Sum = " + sum);
+        System.out.println("Average = " + average);
+    }
+}
+
+Output :
+Enter how many numbers: 5
+Enter number 1: 5
+Enter number 2: 6
+Enter number 3: 3
+Enter number 4: 8
+Enter number 5: 7
+Sum = 29
+Average = 5.8
+
+  Time Complexity: O(n)
+  Space Complexity: O(1)
+  Worst Case Scenario: When n is very large, the loop runs n times to read and sum all inputs
+
+
