@@ -1,0 +1,74 @@
+EXPERIMENT NO. 10
+Creating File
+import java.io.File; 
+import java.io.IOException; 
+public class CreateFile { 
+    public static void main(String[] args) { 
+        try { 
+            File myObj = new 
+File("C:/Users/Administrator/Downloads/sample-1.txt"); 
+            if (myObj.createNewFile()) { 
+                System.out.println("File created: " + myObj.getName()); 
+            } else { 
+                System.out.println("File already exists."); 
+            } 
+        } catch (IOException e) { 
+            System.out.println("An error occurred."); 
+            e.printStackTrace(); 
+        } 
+    } 
+} 
+write file info:
+      package practical_10; 
+ 
+import java.io.FileWriter; 
+import java.io.IOException; 
+ 
+public class WriteToFile { 
+    public static void main(String[] args) { 
+        try { 
+            FileWriter myWriter = new 
+FileWriter("C:/Users/Administrator/Downloads/sample-1.txt"); 
+            myWriter.write("File in Java might be tricky, but it is fun enough."); 
+            myWriter.write("\nWe are enjoying the file handling in Java."); 
+            myWriter.write("\nThis is my First File handling program in JAVA."); 
+            myWriter.close(); 
+            System.out.println("Successfully wrote to the file."); 
+        } catch (IOException e) { 
+            System.out.println("An error occurred."); 
+            e.printStackTrace(); 
+        } 
+    } 
+} 
+
+
+
+
+
+Read file info:
+ package practical_10; 
+ 
+import java.io.File; 
+ 
+public class GetFileInfo { 
+    public static void main(String[] args) { 
+        File myObj = new File("C:/Users/Administrator/Downloads/sample-1.txt"); 
+        if (myObj.exists()) { 
+            System.out.println("File name: " + myObj.getName()); 
+            System.out.println("Absolute path: " + myObj.getAbsolutePath()); 
+            System.out.println("Writable: " + myObj.canWrite()); 
+            System.out.println("Readable: " + myObj.canRead()); 
+            System.out.println("File size in bytes: " + myObj.length()); 
+        } else { 
+            System.out.println("The file does not exist."); 
+        } 
+    } 
+}
+OUTPUT:
+File created: sample-1.txt 
+Successfully wrote to the file.
+File name: sample-1.txt 
+Absolute path: C:\Users\Administrator\Downloads\sample-1.txt 
+Writable: true Readable: true 
+File size in bytes: 120
+
