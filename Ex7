@@ -1,0 +1,83 @@
+                                                   EXPERIMENT-7
+TITLE: INHERITANCE 
+Code: To create a player class and to inherit the classes Cricker_player, Football_player and Hockey_player from player class
+// Base class
+class Player {
+    String name;
+Player(String name) {
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println("Player Name: " + name);
+    }
+}
+
+// Cricket player class
+class Cricket_Player extends Player {
+    Cricket_Player(String name) {
+        super(name);
+    }
+
+    void display() {
+        System.out.println("Cricket Player: " + name);
+    }
+}
+
+// Football player class
+class Football_Player extends Player {
+    Football_Player(String name) {
+        super(name);
+    }
+
+    void display() {
+        System.out.println("Football Player: " + name);
+    }
+}
+
+// Hockey player class
+class Hockey_Player extends Player {
+    Hockey_Player(String name) {
+        super(name);
+    }
+
+    void display() {
+        System.out.println("Hockey Player: " + name);
+    }
+}
+
+// Main class
+public class PlayerDemo {
+    public static void main(String[] args) {
+        Cricket_Player c = new Cricket_Player("Virat");
+        Football_Player f = new Football_Player("Messi");
+        Hockey_Player h = new Hockey_Player("Manpreet");
+
+        c.display();
+        f.display();
+        h.display();
+    }
+}
+
+OUTPUT: 
+Cricket Player: Virat
+Football Player: Messi
+Hockey Player: Manpreet
+
+Time Complexity:
+Object Creation (Constructors) → O(1) (constant time)
+Display Method Calls → O(1) (just printing data)
+Overall Time Complexity → O(1)
+
+Space Complexity:
+Each object stores only a few fields (like name, role, team etc.) → constant space
+No extra data structures used
+Overall Space Complexity → O(1)
+
+
+Worst Case Scenario:
+Even if you create many player objects, each object takes constant time and space individually.
+Worst case is creating a large number of players → still linear growth in memory (O(n) if n players are created).
+For a single program run (like in the given example with only 3 players), it is O(1).
+
+
