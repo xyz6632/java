@@ -1,0 +1,45 @@
+EXPERIMENT NO. 9
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        // ArrayIndexOutOfBoundsException
+        try {
+            int[] a = new int[5];
+            System.out.println(a[6]); // Invalid index
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Invalid Index :o");
+        }
+
+        // NullPointerException
+        try {
+            String str = null;
+            System.out.println(str.length()); // Null reference
+        } catch (NullPointerException e) {
+            System.out.println("String Empty :(");
+        }
+
+        // NumberFormatException
+        try {
+            int j = Integer.parseInt("abc"); // Invalid number format
+            System.out.println(j);
+        } catch (NumberFormatException e) {
+            System.out.println("Number cannot include Alphabets O_o");
+        }
+
+        // Finally block example
+
+        try {
+            int x = 10 / 2;
+            System.out.println("Result: " + x);
+        } catch (ArithmeticException e) {
+            System.out.println("Division error");
+        } finally {
+            System.out.println("This block always executes.");
+        }
+    }
+}
+
+
+
+
+
+
