@@ -1,0 +1,99 @@
+EXPERIMENT NO : 3
+Title : Java classes,objects and methods 
+
+Code:
+package labmanual;
+import java.util.Scanner;
+
+class Rectangle {
+    String color;
+    double area;
+
+    // Constructor 1: Initialize using area
+    Rectangle(double area, String colour) {
+        this.area = area;
+        this.color = colour;
+    }
+
+    double get_area() {     // return area
+        return area;
+    }
+
+    String get_color() {    // return color
+        return color;
+    }
+}
+
+public class Experiment3 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input for first rectangle
+        System.out.println("Enter details for first rectangle:");
+        System.out.print("Area: ");
+        double area1 = sc.nextDouble();
+        sc.nextLine();  // Consume newline
+        System.out.print("Colour: ");
+        String colour1 = sc.nextLine();
+
+        // Input for second rectangle
+        System.out.println("\nEnter details for second rectangle:");
+        System.out.print("Area: ");
+        double area2 = sc.nextDouble();
+        sc.nextLine();  // Consume newline
+        System.out.print("Colour: ");
+        String colour2 = sc.nextLine();
+
+        // Create objects
+        Rectangle r1 = new Rectangle(area1, colour1);
+        Rectangle r2 = new Rectangle(area2, colour2);
+
+        // Compare area and color
+        if (r1.get_area() == r2.get_area() && r1.get_color().equalsIgnoreCase(r2.get_color())) {
+            System.out.println("\nSame Rectangles");
+        } else {
+            System.out.println("\nDifferent Rectangles");
+        }
+
+        sc.close();
+    }
+}
+
+OUTPUT:
+Enter details for first rectangle:
+Area: 50
+Colour: Pink
+
+Enter details for second rectangle:
+Area: 40
+Colour: Pink
+
+Different Rectangles
+
+Enter details for first rectangle:
+Area: 20
+Colour: red
+
+Enter details for second rectangle:
+Area: 59
+Colour: purple
+
+Different Rectangles
+
+Enter details for first rectangle:
+Area: 30
+Colour: blue
+
+Enter details for second rectangle:
+Area: 30
+Colour: blue
+
+Same Rectangles
+
+
+
+
+Time Complexity: O(n), because equalsIgnoreCase may compare up to n characters of the color strings (n = length of string). All other operations are O(1).
+Space Complexity: O(n), for storing the two input strings (n = total length of both).
+Worst Case Scenario: When the two color strings are long and nearly identical (or identical), equalsIgnoreCase compares every character, taking O(n) time.
+
