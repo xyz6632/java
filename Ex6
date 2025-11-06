@@ -1,0 +1,50 @@
+                                                         EXPERIMENT-6
+Title: Addition of two matrices 
+Code:
+public class Matrix9 {
+
+    public static void main(String[] args) {
+        int size = 9;
+        int[][] matrix = new int[size][size];
+
+        // Fill the matrix with a Latin Square pattern
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = (i + j) % size + 1;
+            }
+        }
+
+        // Print the matrix
+        System.out.println("9x9 Matrix without repetition in rows and columns:");
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+OUTPUT:
+9x9 Matrix without repetition in rows and columns:
+1 2 3 4 5 6 7 8 9
+2 3 4 5 6 7 8 9 1
+3 4 5 6 7 8 9 1 2
+4 5 6 7 8 9 1 2 3
+5 6 7 8 9 1 2 3 4
+6 7 8 9 1 2 3 4 5
+7 8 9 1 2 3 4 5 6
+8 9 1 2 3 4 5 6 7
+9 1 2 3 4 5 6 7 8
+
+Time Complexity:
+   • Filling the 9x9 matrix → O(n²)
+   • Printing the matrix → O(n²)
+   • Overall → O(n²)
+
+ Space Complexity:
+   • 2D array of size n x n → O(n²)
+
+Worst Case Scenario:
+   • When the matrix size is increased significantly (e.g., to 1000x1000), 
+     the time and space usage grows quadratically, which could slow down execution 
+     or cause memory issues on limited devices.
